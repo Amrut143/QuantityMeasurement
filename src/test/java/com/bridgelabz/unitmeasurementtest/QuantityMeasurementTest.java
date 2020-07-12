@@ -27,4 +27,11 @@ public class QuantityMeasurementTest {
         Length inch2 = new Length(Unit.INCH, 0.0);
         Assert.assertEquals(inch1, inch2);
     }
+
+    @Test
+    public void givenDifferentInchValue_ShouldReturnNotEqual() {
+        Length inch1 = new Length(Unit.INCH, 0.0);
+        Length inch2 = new Length(Unit.INCH, 1.0);
+        Assert.assertNotEquals(inch1, inch2);
+    }
 }
