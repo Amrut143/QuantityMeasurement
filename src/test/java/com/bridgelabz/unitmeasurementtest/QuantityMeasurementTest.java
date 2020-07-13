@@ -37,6 +37,14 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenOneFeetAndOtherClassObject_ShouldReturnNotEqual() {
+        Length feet1 = new Length(Unit.FEET, 1.0);
+        Integer integer = 2;
+        boolean equals = feet1.equals(integer);
+        Assert.assertFalse(equals);
+    }
+
+    @Test
     public void givenSameInchValue_ShouldReturnEqual() {
         Length inch1 = new Length(Unit.INCH, 0.0);
         Length inch2 = new Length(Unit.INCH, 0.0);
