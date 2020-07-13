@@ -22,6 +22,14 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given1FeetAnd2FeetAsNull_ShouldReturnNotEquals() {
+        Length feet1 = new Length(Unit.FEET, 0.0);
+        Length feet2 = null;
+        boolean type = feet1.equals(feet2);
+        Assert.assertEquals(false, type);
+    }
+
+    @Test
     public void givenSameInchValue_ShouldReturnEqual() {
         Length inch1 = new Length(Unit.INCH, 0.0);
         Length inch2 = new Length(Unit.INCH, 0.0);
