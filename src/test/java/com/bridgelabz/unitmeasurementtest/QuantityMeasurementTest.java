@@ -30,7 +30,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenSameReference_ShouldReturnEquals() {
+    public void givenSameReferenceForFeet_ShouldReturnEquals() {
         Length feet1 = new Length(Unit.FEET, 1.0);
         boolean isEqual = feet1.equals(feet1);
         Assert.assertEquals(true, isEqual);
@@ -40,8 +40,8 @@ public class QuantityMeasurementTest {
     public void givenOneFeetAndOtherClassObject_ShouldReturnNotEqual() {
         Length feet1 = new Length(Unit.FEET, 1.0);
         Integer integer = 2;
-        boolean equals = feet1.equals(integer);
-        Assert.assertFalse(equals);
+        boolean isEquals = feet1.equals(integer);
+        Assert.assertFalse(isEquals);
     }
 
     @Test
@@ -57,6 +57,30 @@ public class QuantityMeasurementTest {
         Length inch2 = new Length(Unit.INCH, 1.0);
         Assert.assertNotEquals(inch1, inch2);
     }
+
+    @Test
+    public void given1InchAnd2InchAsNull_ShouldReturnNotEquals() {
+        Length inch1 = new Length(Unit.INCH, 0.0);
+        Length inch2 = null;
+        boolean isEqual = inch1.equals(inch2);
+        Assert.assertEquals(false, isEqual);
+    }
+
+    @Test
+    public void givenSameReferenceForInch_ShouldReturnEquals() {
+        Length inch1 = new Length(Unit.INCH, 1.0);
+        boolean isEqual = inch1.equals(inch1);
+        Assert.assertEquals(true, isEqual);
+    }
+
+    @Test
+    public void givenOneInchAndOtherClassObject_ShouldReturnNotEqual() {
+        Length inch1 = new Length(Unit.INCH, 1.0);
+        Integer integer = 2;
+        boolean isEquals = inch1.equals(integer);
+        Assert.assertFalse(isEquals);
+    }
+
 
     @Test
     public void given0FeetAnd0Inch_ShouldReturnTrue() {
