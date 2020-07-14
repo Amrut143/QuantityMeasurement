@@ -161,4 +161,11 @@ public class QuantityMeasurementTest {
         Length centimeter2 = new Length(Unit.CM, 0.0);
         Assert.assertEquals(centimeter1, centimeter2);
     }
+
+    @Test
+    public void givenDifferentCentimeterValue_ShouldReturnNotEqual() {
+        Length centimeter1 = new Length(Unit.CM, 0.0);
+        Length centimeter2 = new Length(Unit.CM, 1.0);
+        Assert.assertNotEquals(centimeter1, centimeter2);
+    }
 }
