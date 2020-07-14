@@ -168,4 +168,12 @@ public class QuantityMeasurementTest {
         Length centimeter2 = new Length(Unit.CM, 1.0);
         Assert.assertNotEquals(centimeter1, centimeter2);
     }
+
+    @Test
+    public void given1CentimeterAnd2CentimeterAsNull_ShouldReturnNotEquals() {
+        Length centimeter1 = new Length(Unit.CM, 0.0);
+        Length centimeter2 = null;
+        boolean isEqual = centimeter1.equals(centimeter2);
+        Assert.assertEquals(false, isEqual);
+    }
 }
