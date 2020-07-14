@@ -183,4 +183,12 @@ public class QuantityMeasurementTest {
         boolean isEqual = centimeter1.equals(centimeter1);
         Assert.assertEquals(true, isEqual);
     }
+
+    @Test
+    public void givenOneCentimeterAndOtherClassObject_ShouldReturnNotEqual() {
+        Length centimeter = new Length(Unit.CM, 1.0);
+        Integer integer = 2;
+        boolean isEquals = centimeter.equals(integer);
+        Assert.assertFalse(isEquals);
+    }
 }
