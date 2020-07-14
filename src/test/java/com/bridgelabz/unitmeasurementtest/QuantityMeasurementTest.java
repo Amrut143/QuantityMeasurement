@@ -191,4 +191,12 @@ public class QuantityMeasurementTest {
         boolean isEquals = centimeter.equals(integer);
         Assert.assertFalse(isEquals);
     }
+
+    @Test
+    public void given2InchAnd5Centimeter_WhenCompare_ShouldReturnTrue() {
+        Length inch = new Length(Unit.INCH, 2.0);
+        Length centimeter = new Length(Unit.CM, 5.0);
+        boolean compareCheck = inch.compare(centimeter);
+        Assert.assertTrue(compareCheck);
+    }
 }
