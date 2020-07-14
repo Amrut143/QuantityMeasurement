@@ -3,7 +3,6 @@ package com.bridgelabz.unitmeasurementtest;
 import com.bridgelabz.unitmeasurement.service.Length;
 import com.bridgelabz.unitmeasurement.utility.Unit;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class QuantityMeasurementTest {
@@ -154,5 +153,12 @@ public class QuantityMeasurementTest {
         Length feet = new Length(Unit.FEET, 3.0);
         boolean compareCheck = yard.compare(feet);
         Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void givenSameCentimeterValue_ShouldReturnEqual() {
+        Length centimeter1 = new Length(Unit.CM, 0.0);
+        Length centimeter2 = new Length(Unit.CM, 0.0);
+        Assert.assertEquals(centimeter1, centimeter2);
     }
 }
