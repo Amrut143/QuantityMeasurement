@@ -295,4 +295,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = tonne.compare(kg);
         Assert.assertFalse(compareCheck);
     }
+
+    @Test
+    public void given100degCelAnd212Fahrenheit_WhenCompare_ShouldReturnTrue() {
+            QuantityMeasurement celsius = new QuantityMeasurement(Unit.CELSIUS, 100);
+            QuantityMeasurement fahrenheit = new QuantityMeasurement(Unit.FAHRENHEIT, 212);
+            boolean compareCheck = celsius.compare(fahrenheit);
+            Assert.assertTrue(compareCheck);
+    }
 }
