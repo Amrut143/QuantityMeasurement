@@ -33,4 +33,16 @@ public enum Unit {
         double value2 = getValue(lenObj2);
         return Objects.equals(value1, value2);
     }
+
+    /**
+     *
+     * @param lenObj1
+     * @param lenObj2
+     * @return
+     */
+    public static double add(Length lenObj1, Length lenObj2) {
+        double firstValue = getValue(lenObj1);
+        double secondValue = getValue(lenObj2);
+        return firstValue + secondValue;
+    }
 }

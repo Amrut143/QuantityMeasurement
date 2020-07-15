@@ -26,6 +26,15 @@ public class Length {
         return Unit.compare(this,that);
     }
 
+    /**
+     *
+     * @param value
+     * @return
+     */
+    public double add(Length value) {
+        return Unit.add(this,value);
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;
