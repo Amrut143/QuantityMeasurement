@@ -1,5 +1,6 @@
 package com.bridgelabz.unitmeasurementtest;
 
+import com.bridgelabz.unitmeasurement.exception.QuantityMeasurementException;
 import com.bridgelabz.unitmeasurement.service.QuantityMeasurement;
 import com.bridgelabz.unitmeasurement.utility.Unit;
 import org.junit.Assert;
@@ -84,7 +85,7 @@ public class QuantityMeasurementTest {
 
 
     @Test
-    public void given0FeetAnd0Inch_WhenCompare_ShouldReturnTrue() {
+    public void given0FeetAnd0Inch_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET, 0.0);
         QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH, 0.0);
         boolean compareCheck = feet1.compare(inch1);
@@ -92,7 +93,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1InchAnd2Feet_WhenCompare_ShouldReturnFalse() {
+    public void given1InchAnd2Feet_WhenCompare_ShouldReturnFalse() throws QuantityMeasurementException {
         QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH, 1.0);
         QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET, 2.0);
         boolean compareCheck = inch1.compare(feet1);
@@ -100,7 +101,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1FeetAnd12Inch_WhenCompare_ShouldReturnTrue() {
+    public void given1FeetAnd12Inch_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH, 12.0);
         boolean compareCheck = feet1.compare(inch1);
@@ -108,7 +109,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenThreeFeetAndOneYard_WhenCompare_ShouldReturnTrue() {
+    public void givenThreeFeetAndOneYard_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 3.0);
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         boolean compareCheck = feet.compare(yard);
@@ -116,7 +117,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneFeetAndOneYard_WhenCompare_ShouldReturnFalse() {
+    public void givenOneFeetAndOneYard_WhenCompare_ShouldReturnFalse() throws QuantityMeasurementException {
         QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         boolean compareCheck = feet.compare(yard);
@@ -124,7 +125,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneInchAndOneYard_WhenCompare_ShouldReturnFalse() {
+    public void givenOneInchAndOneYard_WhenCompare_ShouldReturnFalse() throws QuantityMeasurementException {
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 1.0);
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         boolean compareCheck = inch.compare(yard);
@@ -132,7 +133,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1YardAnd36Inch_WhenCompare_ShouldReturnTrue() {
+    public void given1YardAnd36Inch_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 36.0);
         boolean compareCheck = yard.compare(inch);
@@ -140,7 +141,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given36InchAndOneYard_WhenCompare_ShouldReturnTrue() {
+    public void given36InchAndOneYard_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 36.0);
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         boolean compareCheck = inch.compare(yard);
@@ -148,7 +149,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneYardAndThreeFeet_WhenCompare_ShouldReturnTrue() {
+    public void givenOneYardAndThreeFeet_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1.0);
         QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 3.0);
         boolean compareCheck = yard.compare(feet);
@@ -193,7 +194,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given2InchAnd5Centimeter_WhenCompare_ShouldReturnTrue() {
+    public void given2InchAnd5Centimeter_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 2.0);
         QuantityMeasurement centimeter = new QuantityMeasurement(Unit.CM, 5.0);
         boolean compareCheck = inch.compare(centimeter);
@@ -201,7 +202,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void giveInchAndInch_WhenAdded_ShouldReturnResultInInch() {
+    public void giveInchAndInch_WhenAdded_ShouldReturnResultInInch() throws QuantityMeasurementException {
         QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH, 2.0);
         QuantityMeasurement inch2 = new QuantityMeasurement(Unit.INCH, 2.0);
         double result = inch1.add(inch2);
@@ -209,7 +210,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneFeetAndTwoInches_WhenAdded_ShouldReturnResultInInch() {
+    public void givenOneFeetAndTwoInches_WhenAdded_ShouldReturnResultInInch() throws QuantityMeasurementException {
         QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 2.0);
         double result = feet.add(inch);
@@ -217,7 +218,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneFeetAndOneFeet_WhenAdded_ShouldReturnResultInInch() {
+    public void givenOneFeetAndOneFeet_WhenAdded_ShouldReturnResultInInch() throws QuantityMeasurementException {
         QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement feet2 = new QuantityMeasurement(Unit.FEET, 1.0);
         double result = feet1.add(feet2);
@@ -225,7 +226,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenTwoInchAndTwoHalfCm_WhenAdded_ShouldReturnResultInInch() {
+    public void givenTwoInchAndTwoHalfCm_WhenAdded_ShouldReturnResultInInch() throws QuantityMeasurementException {
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 2.0);
         QuantityMeasurement centimeter = new QuantityMeasurement(Unit.CM, 2.5);
         double result = inch.add(centimeter);
@@ -233,7 +234,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenGallonAndLitre_WhenCompare_ShouldReturnTrue() {
+    public void givenGallonAndLitre_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON, 1.0);
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 3.78);
         boolean compareCheck = gallon.compare(litre);
@@ -241,7 +242,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneLitreAnd1000ml_WhenCompare_ShouldReturnTrue() {
+    public void givenOneLitreAnd1000ml_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 1.0);
         QuantityMeasurement mililitre = new QuantityMeasurement(Unit.ML, 1000.0);
         boolean compareCheck = litre.compare(mililitre);
@@ -249,7 +250,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenGallonAndLitre_WhenAdded_ShouldReturnResultInLitres() {
+    public void givenGallonAndLitre_WhenAdded_ShouldReturnResultInLitres() throws QuantityMeasurementException {
         QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON, 1.0);
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 3.78);
         double result = gallon.add(litre);
@@ -257,7 +258,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneLitreAnd1000Mililitre_WhenAdded_ShouldReturnResultInLitres() {
+    public void givenOneLitreAnd1000Mililitre_WhenAdded_ShouldReturnResultInLitres() throws QuantityMeasurementException {
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 1.0);
         QuantityMeasurement mililitre = new QuantityMeasurement(Unit.ML, 1000.0);
         double result = litre.add(mililitre);
@@ -265,7 +266,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneKgAnd1000Gm_WhenCompare_ShouldReturnTrue() {
+    public void givenOneKgAnd1000Gm_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement kg = new QuantityMeasurement(Unit.KG, 1.0);
         QuantityMeasurement gram = new QuantityMeasurement(Unit.GRAM, 1000.0);
         boolean compareCheck = kg.compare(gram);
@@ -273,7 +274,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneTonneAnd1000Kgs_WhenCompare_ShouldReturnTrue() {
+    public void givenOneTonneAnd1000Kgs_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
         QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE, 1.0);
         QuantityMeasurement kg = new QuantityMeasurement(Unit.KG, 1000.0);
         boolean compareCheck = tonne.compare(kg);
@@ -281,7 +282,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneTonneAnd1000Grams_WhenAdded_ShouldReturnResultInKgs() {
+    public void givenOneTonneAnd1000Grams_WhenAdded_ShouldReturnResultInKgs() throws QuantityMeasurementException {
         QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE, 1.0);
         QuantityMeasurement gram = new QuantityMeasurement(Unit.GRAM, 1000.0);
         double result = tonne.add(gram);
@@ -289,7 +290,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenOneTonneAnd100Kgs_WhenCompare_ShouldReturnFalse() {
+    public void givenOneTonneAnd100Kgs_WhenCompare_ShouldReturnFalse() throws QuantityMeasurementException {
         QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE, 1.0);
         QuantityMeasurement kg = new QuantityMeasurement(Unit.KG, 100.0);
         boolean compareCheck = tonne.compare(kg);
@@ -297,10 +298,25 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given100degCelAnd212Fahrenheit_WhenCompare_ShouldReturnTrue() {
+    public void given100degCelAnd212Fahrenheit_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
             QuantityMeasurement celsius = new QuantityMeasurement(Unit.CELSIUS, 100);
             QuantityMeasurement fahrenheit = new QuantityMeasurement(Unit.FAHRENHEIT, 212);
             boolean compareCheck = celsius.compare(fahrenheit);
             Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void givenFeetAndGallon_WhenNotEqual_ShouldThrowCustomException() {
+        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1.0);
+        QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON, 3.78);
+        boolean compareCheck = false;
+        try {
+            compareCheck = feet.compare(gallon);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.INCOMPATIBLE_TYPES, e.type);
+            e.printStackTrace();
+        }
+        Assert.assertFalse(compareCheck);
+    }
+
 }
