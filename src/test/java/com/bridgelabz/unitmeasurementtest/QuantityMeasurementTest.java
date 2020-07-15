@@ -255,4 +255,12 @@ public class QuantityMeasurementTest {
         double result = gallon.add(litre);
         Assert.assertEquals(7.56, result, 0.0);
     }
+
+    @Test
+    public void givenOneLitreAnd1000Mililitre_WhenAdded_ShouldReturnResultInLitres() {
+        Length litre = new Length(Unit.LITRE,1.0);
+        Length mililitre = new Length(Unit.ML, 1000.0);
+        double result = litre.add(mililitre);
+        Assert.assertEquals(2.0, result, 0.0);
+    }
 }
