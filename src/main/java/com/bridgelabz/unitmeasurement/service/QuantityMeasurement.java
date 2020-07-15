@@ -2,7 +2,7 @@ package com.bridgelabz.unitmeasurement.service;
 
 import com.bridgelabz.unitmeasurement.utility.Unit;
 
-public class Length {
+public class QuantityMeasurement {
 
     public final Unit unit;
     public final double value;
@@ -12,7 +12,7 @@ public class Length {
      * @param unit
      * @param value
      */
-    public Length(Unit unit, double value) {
+    public QuantityMeasurement(Unit unit, double value) {
         this.unit = unit;
         this.value = value;
     }
@@ -22,7 +22,7 @@ public class Length {
      * @param that
      * @return
      */
-    public boolean compare(Length that) {
+    public boolean compare(QuantityMeasurement that) {
         return Unit.compare(this,that);
     }
 
@@ -31,7 +31,7 @@ public class Length {
      * @param value
      * @return
      */
-    public double add(Length value) {
+    public double add(QuantityMeasurement value) {
         return Unit.add(this,value);
     }
 
@@ -39,7 +39,7 @@ public class Length {
     public boolean equals(Object that) {
         if (this == that) return true;
         if (that == null || getClass() != that.getClass()) return false;
-        Length length = (Length) that;
+        QuantityMeasurement length = (QuantityMeasurement) that;
         return Double.compare(length.value, value) == 0 &&
                 unit == length.unit;
     }
