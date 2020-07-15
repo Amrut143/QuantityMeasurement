@@ -5,7 +5,7 @@ import com.bridgelabz.unitmeasurement.service.Length;
 import java.util.Objects;
 
 public enum Unit {
-    FEET(12), INCH(1), YARD(36), CM(0.4), GALLON(3.78), LITRE(1);
+    FEET(12), INCH(1), YARD(36), CM(0.4), GALLON(3.78), LITRE(1), ML(0.001);
 
     private final double value;
 
