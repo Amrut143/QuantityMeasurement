@@ -199,4 +199,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = inch.compare(centimeter);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void giveInchAndInch_WhenAdded_ShouldReturnResultInInch() {
+        Length inch1 = new Length(Unit.INCH,2.0);
+        Length inch2 = new Length(Unit.INCH, 2.0);
+        double result = inch1.add(inch2);
+        Assert.assertEquals(4, result, 0.0);
+    }
 }
