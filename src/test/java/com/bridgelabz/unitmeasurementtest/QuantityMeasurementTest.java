@@ -223,4 +223,12 @@ public class QuantityMeasurementTest {
         double result = feet1.add(feet2);
         Assert.assertEquals(24, result, 0.0);
     }
+
+    @Test
+    public void givenTwoInchAndTwoHalfCm_WhenAdded_ShouldReturnResultInInch() {
+        Length inch = new Length(Unit.INCH,2.0);
+        Length centimeter = new Length(Unit.CM, 2.5);
+        double result = inch.add(centimeter);
+        Assert.assertEquals(3, result, 0.0);
+    }
 }
