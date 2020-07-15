@@ -247,4 +247,12 @@ public class QuantityMeasurementTest {
         boolean compareCheck = litre.compare(mililitre);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void givenGallonAndLitre_WhenAdded_ShouldReturnResultInLitres() {
+        Length gallon = new Length(Unit.GALLON,1.0);
+        Length litre = new Length(Unit.LITRE, 3.78);
+        double result = gallon.add(litre);
+        Assert.assertEquals(7.56, result, 0.0);
+    }
 }
