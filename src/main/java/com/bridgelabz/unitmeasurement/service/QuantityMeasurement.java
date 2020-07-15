@@ -1,5 +1,6 @@
 package com.bridgelabz.unitmeasurement.service;
 
+import com.bridgelabz.unitmeasurement.exception.QuantityMeasurementException;
 import com.bridgelabz.unitmeasurement.utility.Unit;
 
 import java.util.Objects;
@@ -25,13 +26,13 @@ public class QuantityMeasurement implements IQuantityMeasurement {
      * @return
      */
     @Override
-    public boolean compare(QuantityMeasurement that) {
+    public boolean compare(QuantityMeasurement that) throws QuantityMeasurementException {
         if (this.unit.typesOfUnit.equals(that.unit.typesOfUnit)) {
             double value1 = Unit.getValue(this);
             double value2 = Unit.getValue(that);
             return Objects.equals(value1, value2);
         }
-        return false;
+        throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INCOMPATIBLE_TYPES, "Unit is not equal");
     }
 
     /**
@@ -40,13 +41,13 @@ public class QuantityMeasurement implements IQuantityMeasurement {
      * @return
      */
     @Override
-    public double add(QuantityMeasurement value) {
+    public double add(QuantityMeasurement value) throws QuantityMeasurementException {
         if (this.unit.typesOfUnit.equals(value.unit.typesOfUnit)) {
             double firstValue = Unit.getValue(this);
             double secondValue = Unit.getValue(value);
             return firstValue + secondValue;
         }
-        return 0;
+        throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INCOMPATIBLE_TYPES, "Unit is not equal");
     }
 
     @Override
