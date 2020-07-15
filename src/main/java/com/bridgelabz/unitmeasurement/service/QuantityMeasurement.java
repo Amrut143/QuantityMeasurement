@@ -23,7 +23,7 @@ public class QuantityMeasurement {
      * @return
      */
     public boolean compare(QuantityMeasurement that) {
-        return Unit.compare(this,that);
+        return Unit.compare(this, that);
     }
 
     /**

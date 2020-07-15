@@ -5,7 +5,9 @@ import com.bridgelabz.unitmeasurement.service.QuantityMeasurement;
 import java.util.Objects;
 
 public enum Unit {
-    FEET(12, TypesOfUnit.LENGTH), INCH(1, TypesOfUnit.LENGTH), YARD(36, TypesOfUnit.LENGTH), CM(0.4, TypesOfUnit.LENGTH), GALLON(3.78, TypesOfUnit.VOLUME), LITRE(1, TypesOfUnit.VOLUME), ML(0.001, TypesOfUnit.VOLUME);
+    FEET(12, TypesOfUnit.LENGTH), INCH(1, TypesOfUnit.LENGTH), YARD(36, TypesOfUnit.LENGTH), CM(0.4, TypesOfUnit.LENGTH),
+    GALLON(3.78, TypesOfUnit.VOLUME), LITRE(1, TypesOfUnit.VOLUME), ML(0.001, TypesOfUnit.VOLUME),
+    KG(1000, TypesOfUnit.WEIGHT), GRAM(1, TypesOfUnit.WEIGHT);
 
     private final double value;
     private final TypesOfUnit typesOfUnit;
