@@ -231,4 +231,12 @@ public class QuantityMeasurementTest {
         double result = inch.add(centimeter);
         Assert.assertEquals(3, result, 0.0);
     }
+
+    @Test
+    public void givenGallonAndLitre_WhenCompare_ShouldReturnTrue() {
+        Length gallon = new Length(Unit.GALLON,1.0);
+        Length litre = new Length(Unit.LITRE, 3.78);
+        boolean compareCheck = gallon.compare(litre);
+        Assert.assertTrue(compareCheck);
+    }
 }
