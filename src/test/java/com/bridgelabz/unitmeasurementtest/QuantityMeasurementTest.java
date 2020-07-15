@@ -202,7 +202,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void giveInchAndInch_WhenAdded_ShouldReturnResultInInch() {
-        QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH,2.0);
+        QuantityMeasurement inch1 = new QuantityMeasurement(Unit.INCH, 2.0);
         QuantityMeasurement inch2 = new QuantityMeasurement(Unit.INCH, 2.0);
         double result = inch1.add(inch2);
         Assert.assertEquals(4, result, 0.0);
@@ -210,7 +210,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneFeetAndTwoInches_WhenAdded_ShouldReturnResultInInch() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET,1.0);
+        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 2.0);
         double result = feet.add(inch);
         Assert.assertEquals(14, result, 0.0);
@@ -218,7 +218,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneFeetAndOneFeet_WhenAdded_ShouldReturnResultInInch() {
-        QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET,1.0);
+        QuantityMeasurement feet1 = new QuantityMeasurement(Unit.FEET, 1.0);
         QuantityMeasurement feet2 = new QuantityMeasurement(Unit.FEET, 1.0);
         double result = feet1.add(feet2);
         Assert.assertEquals(24, result, 0.0);
@@ -226,7 +226,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenTwoInchAndTwoHalfCm_WhenAdded_ShouldReturnResultInInch() {
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH,2.0);
+        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 2.0);
         QuantityMeasurement centimeter = new QuantityMeasurement(Unit.CM, 2.5);
         double result = inch.add(centimeter);
         Assert.assertEquals(3, result, 0.0);
@@ -234,7 +234,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenGallonAndLitre_WhenCompare_ShouldReturnTrue() {
-        QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON,1.0);
+        QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON, 1.0);
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 3.78);
         boolean compareCheck = gallon.compare(litre);
         Assert.assertTrue(compareCheck);
@@ -242,7 +242,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneLitreAnd1000ml_WhenCompare_ShouldReturnTrue() {
-        QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE,1.0);
+        QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 1.0);
         QuantityMeasurement mililitre = new QuantityMeasurement(Unit.ML, 1000.0);
         boolean compareCheck = litre.compare(mililitre);
         Assert.assertTrue(compareCheck);
@@ -250,7 +250,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenGallonAndLitre_WhenAdded_ShouldReturnResultInLitres() {
-        QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON,1.0);
+        QuantityMeasurement gallon = new QuantityMeasurement(Unit.GALLON, 1.0);
         QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 3.78);
         double result = gallon.add(litre);
         Assert.assertEquals(7.56, result, 0.0);
@@ -258,7 +258,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneLitreAnd1000Mililitre_WhenAdded_ShouldReturnResultInLitres() {
-        QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE,1.0);
+        QuantityMeasurement litre = new QuantityMeasurement(Unit.LITRE, 1.0);
         QuantityMeasurement mililitre = new QuantityMeasurement(Unit.ML, 1000.0);
         double result = litre.add(mililitre);
         Assert.assertEquals(2.0, result, 0.0);
@@ -266,7 +266,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneKgAnd1000Gm_WhenCompare_ShouldReturnTrue() {
-        QuantityMeasurement kg = new QuantityMeasurement(Unit.KG,1.0);
+        QuantityMeasurement kg = new QuantityMeasurement(Unit.KG, 1.0);
         QuantityMeasurement gram = new QuantityMeasurement(Unit.GRAM, 1000.0);
         boolean compareCheck = kg.compare(gram);
         Assert.assertTrue(compareCheck);
@@ -274,9 +274,17 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenOneTonneAnd1000Kgs_WhenCompare_ShouldReturnTrue() {
-        QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE,1.0);
+        QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE, 1.0);
         QuantityMeasurement kg = new QuantityMeasurement(Unit.KG, 1000.0);
         boolean compareCheck = tonne.compare(kg);
         Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void givenOneTonneAnd1000Grams_WhenAdded_ShouldReturnResultInKgs() {
+        QuantityMeasurement tonne = new QuantityMeasurement(Unit.TONNE, 1.0);
+        QuantityMeasurement gram = new QuantityMeasurement(Unit.GRAM, 1000.0);
+        double result = tonne.add(gram);
+        Assert.assertEquals(1001.0, result, 0.0);
     }
 }
