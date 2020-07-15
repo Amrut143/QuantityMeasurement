@@ -207,4 +207,12 @@ public class QuantityMeasurementTest {
         double result = inch1.add(inch2);
         Assert.assertEquals(4, result, 0.0);
     }
+
+    @Test
+    public void givenOneFeetAndTwoInches_WhenAdded_ShouldReturnResultInInch() {
+        Length feet = new Length(Unit.FEET,1.0);
+        Length inch = new Length(Unit.INCH, 2.0);
+        double result = feet.add(inch);
+        Assert.assertEquals(14, result, 0.0);
+    }
 }
