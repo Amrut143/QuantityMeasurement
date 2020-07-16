@@ -299,8 +299,8 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given100degCelAnd212Fahrenheit_WhenCompare_ShouldReturnTrue() throws QuantityMeasurementException {
-            QuantityMeasurement celsius = new QuantityMeasurement(Unit.CELSIUS, 100);
-            QuantityMeasurement fahrenheit = new QuantityMeasurement(Unit.FAHRENHEIT, 212);
+            QuantityMeasurement celsius = new QuantityMeasurement(Unit.CELSIUS, 100.0);
+            QuantityMeasurement fahrenheit = new QuantityMeasurement(Unit.FAHRENHEIT, 212.0);
             boolean compareCheck = celsius.compare(fahrenheit);
             Assert.assertTrue(compareCheck);
     }

@@ -21,7 +21,7 @@ public class QuantityMeasurement implements IQuantityMeasurement {
     }
 
     /**
-     *
+     * Function to compare unit and check for equality
      * @param that
      * @return
      */
@@ -36,7 +36,7 @@ public class QuantityMeasurement implements IQuantityMeasurement {
     }
 
     /**
-     *
+     * Function to add values of same unit
      * @param value
      * @return
      */
