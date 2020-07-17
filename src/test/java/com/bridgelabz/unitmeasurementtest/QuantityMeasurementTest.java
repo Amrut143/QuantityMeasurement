@@ -2,7 +2,7 @@ package com.bridgelabz.unitmeasurementtest;
 
 import com.bridgelabz.unitmeasurement.exception.QuantityMeasurementException;
 import com.bridgelabz.unitmeasurement.service.QuantityMeasurement;
-import com.bridgelabz.unitmeasurement.utility.Unit;
+import com.bridgelabz.unitmeasurement.enums.Unit;
 import org.junit.Assert;
 import org.junit.Test;
 

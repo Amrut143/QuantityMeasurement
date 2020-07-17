@@ -1,6 +1,5 @@
-package com.bridgelabz.unitmeasurement.utility;
+package com.bridgelabz.unitmeasurement.enums;
 
-import com.bridgelabz.unitmeasurement.service.IQuantityMeasurement;
 import com.bridgelabz.unitmeasurement.service.QuantityMeasurement;
 
 public enum Unit {

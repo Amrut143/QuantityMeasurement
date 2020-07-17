@@ -1,7 +1,7 @@
 package com.bridgelabz.unitmeasurement.service;
 
 import com.bridgelabz.unitmeasurement.exception.QuantityMeasurementException;
-import com.bridgelabz.unitmeasurement.utility.Unit;
+import com.bridgelabz.unitmeasurement.enums.Unit;
 
 import java.util.Objects;
 
